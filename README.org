@@ -1,0 +1,3 @@
+#+TITLE: Gtk-rs sandbox
+
+This repository contains some simple examples of Gtk-rs.
