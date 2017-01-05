@@ -2,6 +2,7 @@ extern crate gtk;
 extern crate gio;
 
 use gtk::prelude::*;
+use gtk::Button;
 
 fn main() {
 
@@ -10,7 +11,12 @@ fn main() {
 
     app.connect_activate(move |app| {
         let widget = gtk::ApplicationWindow::new(&app);
-        widget.show();
+        let button = Button::new_with_label("Click me");
+        widget.add(&button);
+        button.connect_clicked(|_| {
+            println!("Clicked!");
+        });
+        widget.show_all();
     });
                          
     let a: Vec<String> = std::env::args().collect();
